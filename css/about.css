@@ -1,0 +1,502 @@
+/* ---------------------------------------------------
+　PROFILE
+---------------------------------------------------- */
+.profile-contents-box {
+  display: flex;
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px) {
+  .profile-contents-box {
+    flex-direction: column;
+  }
+}
+
+/* プロフィール画像 */
+.profile-contents-box figure {
+  width: clamp(177px, 23.08vw, 300px);
+}
+.profile-contents-box figure img {
+  width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 767px) {
+  .profile-contents-box figure {
+    margin: 0 auto 25px auto;
+    width: 160px;
+  }
+  .profile-contents-box figure img {
+    aspect-ratio: 250 / 280;
+    object-position: top;
+    object-fit: cover;
+  }
+}
+
+/* プロフィール枠 */
+.profile-contents-box .profile-contents {
+  width: calc(100% - clamp(177px, 23.08vw, 300px) - clamp(35px, 4.62vw, 60px));
+}
+@media screen and (max-width: 767px) {
+  .profile-contents-box .profile-contents {
+    width: 100%;
+  }
+}
+
+/* 名前 */
+.profile-contents-box .profile-contents .name {
+  display: flex;
+  margin-bottom: clamp(20px, 2.62vw, 34px);
+}
+@media screen and (max-width: 767px) {
+  .profile-contents-box .profile-contents .name {
+    margin-bottom: 20px;
+  }
+}
+.profile-contents-box .profile-contents .name .jp {
+  font-size: clamp(2rem, 2.62vw, 3.4rem);
+  line-height: 1;
+  letter-spacing: 0.15em;
+}
+@media screen and (max-width: 767px) {
+  .profile-contents-box .profile-contents .name .jp {
+    font-size: 2rem;
+  }
+}
+.profile-contents-box .profile-contents .name .en {
+  margin-left: clamp(14px, 1.85vw, 24px);
+  font-size: clamp(2rem, 2.77vw, 3.6rem);
+  line-height: 1;
+  font-style: italic;
+  color: var(--font-color-light);
+  position: relative;
+}
+@media screen and (max-width: 767px) {
+  .profile-contents-box .profile-contents .name .en {
+    margin-left: 12px;
+    font-size: 1.9rem;
+  }
+}
+.profile-contents-box .profile-contents .name .en::before {
+  content: '';
+  display: inline-block;
+  margin-right: clamp(14px, 1.85vw, 24px);
+  width: 1px;
+  height: clamp(18px, 2.31vw, 30px);
+  background-color: var(--name-border);
+}
+@media screen and (max-width: 767px) {
+  .profile-contents-box .profile-contents .name .en::before {
+    margin-right: 13px;
+    width: 1px;
+    height: 15px;
+  }
+}
+
+/* 職種 */
+.profile-contents-box .profile-contents .profile__jobs {
+  margin-bottom: clamp(20px, 2.69vw, 35px);
+}
+.profile-contents-box .profile-contents .profile__jobs ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(9px, 1.15vw, 15px);
+  list-style: none;
+}
+.profile-contents-box .profile-contents .profile__jobs ul li {
+  padding: clamp(7px, 0.92vw, 12px) clamp(15px, 1.92vw, 25px);
+  line-height: 1;
+  background-color: var(--main-color);
+  border-radius: clamp(24px, 3.08vw, 40px);
+}
+@media screen and (max-width: 767px) {
+  .profile-contents-box .profile-contents .profile__jobs {
+    margin-bottom: 19px;
+  }
+  .profile-contents-box .profile-contents .profile__jobs ul {
+    gap: 8px;
+  }
+  .profile-contents-box .profile-contents .profile__jobs ul li {
+    padding: 7px 10px;
+    border-radius: 24px;
+    font-size: 1.3rem;
+    letter-spacing: 0;
+  }
+}
+
+/* 情報 */
+.profile-contents-box .profile-contents .profile__info {
+  margin-bottom: clamp(24px, 3.08vw, 40px);
+}
+.profile-contents-box .profile-contents .profile__info ul {
+  display: flex;
+  flex-wrap: wrap;
+  gap: clamp(9px, 1.15vw, 15px) clamp(24px, 3.08vw, 40px);
+  list-style: none;
+}
+.profile-contents-box .profile-contents .profile__info ul li {
+  padding-left: clamp(15px, 2vw, 26px);
+  line-height: 1;
+  position: relative;
+}
+.profile-contents-box .profile-contents .profile__info ul li::before {
+  content: '';
+  display: inline-block;
+  width: clamp(9px, 1.15vw, 15px);
+  height: clamp(5px, 0.62vw, 8px);
+  background-color: #d9d9d9;
+  position: absolute;
+  top: 50%;
+  left: 0;
+  transform: translateY(-50%);
+}
+@media screen and (max-width: 767px) {
+  .profile-contents-box .profile-contents .profile__info {
+    margin-bottom: 24px;
+  }
+  .profile-contents-box .profile-contents .profile__info ul {
+    gap: 12px 24px;
+  }
+  .profile-contents-box .profile-contents .profile__info ul li {
+    padding-left: 15px;
+  }
+  .profile-contents-box .profile-contents .profile__info ul li::before {
+    width: 9px;
+    height: 5px;
+  }
+}
+
+/* プロフィール説明 */
+.profile-contents-box .profile-contents .description p {
+  margin-bottom: 1em;
+  font-size: clamp(1.4rem, 1.23vw, 1.6rem);
+  line-height: 1.75;
+}
+.profile-contents-box .profile-contents .description p:last-child {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 767px) {
+  .profile-contents-box .profile-contents .description p {
+    font-size: 1.4rem;
+  }
+}
+
+/* ---------------------------------------------------
+　CAREER
+---------------------------------------------------- */
+.career-box {
+  margin-bottom: clamp(35px, 4.62vw, 60px);
+}
+
+/* タイトル */
+.career-title {
+  margin-bottom: clamp(24px, 3.08vw, 40px);
+  padding: clamp(10px, 1vw, 13px) clamp(12px, 1.54vw, 20px) clamp(11px, 1.15vw, 15px) clamp(12px, 1.54vw, 20px);
+  background-color: var(--main-color);
+  text-align: center;
+  position: relative;
+}
+.career-title::after {
+  content: '';
+  position: absolute;
+  left: 50%;
+  bottom: -12px;
+  transform: translateX(-50%);
+  width: 0;
+  height: 0;
+  border-left: 15px solid transparent;
+  border-right: 15px solid transparent;
+  border-top: 12px solid var(--main-color);
+}
+.career-title h4 {
+  font-size: clamp(2rem, 2vw, 2.6rem);
+  line-height: 1;
+  font-weight: 500;
+}
+@media screen and (max-width: 767px) {
+  .career-title {
+    margin-bottom: 20px;
+    padding: 9px 20px 12px 20px;
+  }
+  .career-title::after {
+    bottom: -8px;
+    border-left: 12px solid transparent;
+    border-right: 12px solid transparent;
+    border-top: 8px solid var(--main-color);
+  }
+  .career-title h4 {
+    font-size: 1.8rem;
+  }
+}
+
+/* タイムライン */
+.career-timeline {
+  padding-left: clamp(8px, 1.08vw, 14px);
+}
+.career-timeline .timeline-item {
+  padding-bottom: clamp(24px, 3.08vw, 40px);
+  padding-left: clamp(30px, 3.85vw, 50px);
+  width: 100%;
+  border-left: 3px solid var(--main-color);
+  position: relative;
+}
+.career-timeline .timeline-item:last-child {
+  padding-bottom: clamp(12px, 1.54vw, 20px);
+}
+.career-timeline .timeline-item::before {
+  content: '';
+  display: inline-block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-color: var(--main-color);
+  position: absolute;
+  top: 0;
+  left: -17px;
+}
+.career-timeline .timeline-item .date {
+  display: flex;
+  align-items: center;
+  padding-top: clamp(3px, 0.38vw, 5px);
+  margin-bottom: clamp(14px, 1.77vw, 23px);
+}
+.career-timeline .timeline-item .date p {
+  margin-left: 23px;
+  padding-left: 5px;
+  font-size: 1.8rem;
+  line-height: 1;
+  position: relative;
+}
+.career-timeline .timeline-item .date p:first-child {
+  margin-left: 0;
+  padding-left: 0;
+}
+.career-timeline .timeline-item .date p::before {
+  content: '';
+  width: 12px;
+  height: 1px;
+  background-color: var(--font-color);
+  position: absolute;
+  top: 50%;
+  left: -17px;
+  transform: translateY(-50%);
+}
+.career-timeline .timeline-item .date p:first-child:before {
+  content: none;
+}
+.career-timeline .timeline-item .contents .title {
+  margin-bottom: clamp(10px, 1.38vw, 18px);
+  font-size: clamp(1.9rem, 1.69vw, 2.2rem);
+  line-height: 1.4;
+  font-weight: 500;
+}
+.career-timeline .timeline-item .contents .description p {
+  margin-bottom: clamp(0.59rem, 0.77vw, 1rem);
+  font-size: clamp(1.4rem, 1.23vw, 1.6rem);
+  line-height: 1.75;
+}
+.career-timeline .timeline-item .contents .description p:last-child {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 767px) {
+  .career-timeline {
+    padding-left: 8px;
+  }
+  .career-timeline .timeline-item {
+    padding-bottom: 25px;
+    padding-left: 20px;
+  }
+  .career-timeline .timeline-item:last-child {
+    padding-bottom: 15px;
+  }
+  .career-timeline .timeline-item::before {
+    width: 20px;
+    height: 20px;
+    left: -12px;
+  }
+  .career-timeline .timeline-item .date {
+    padding-top: 3px;
+    margin-bottom: 7px;
+  }
+  .career-timeline .timeline-item .date p {
+    margin-left: 19px;
+    padding-left: 2px;
+    font-size: 1.4rem;
+  }
+  .career-timeline .timeline-item .date p::before {
+    width: 8px;
+    left: -13px;
+  }
+  .career-timeline .timeline-item .contents .title {
+    margin-bottom: 10px;
+    font-size: 1.6rem;
+  }
+  .career-timeline .timeline-item .contents .description p {
+    margin-bottom: 0.6rem;
+    font-size: 1.4rem;
+    line-height: 1.75;
+  }
+  .career-timeline .timeline-item .contents .description p:last-child {
+    margin-bottom: 0;
+  }
+}
+
+/* ---------------------------------------------------
+　STRENGTHS
+---------------------------------------------------- */
+.strengths-list ul li {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: clamp(18px, 2.31vw, 30px);
+  list-style: none;
+}
+.strengths-list ul li:last-child {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 767px) {
+  .strengths-list ul li {
+    flex-direction: column;
+    margin-bottom: 40px;
+  }
+}
+
+/* アイコン */
+.strengths-list ul li .icon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  width: clamp(162px, 21.15vw, 275px);
+  aspect-ratio: 1 / 1;
+  border: 1px solid var(--border);
+  background-color: #ffffff;
+  border-radius: 50%;
+}
+.strengths-list ul li .icon figure {
+  width: 100%;
+  max-width: clamp(35px, 4.62vw, 60px);
+}
+.strengths-list ul li .icon figure img {
+  width: 100%;
+  height: auto;
+}
+.strengths-list ul li .icon h4 {
+  padding-top: clamp(14px, 1.85vw, 24px);
+  font-size: clamp(1.4rem, 1.85vw, 2.4rem);
+  line-height: 1.166;
+  font-weight: 400;
+}
+@media screen and (max-width: 767px) {
+  .strengths-list ul li .icon {
+    margin-bottom: 20px;
+    width: 160px;
+  }
+  .strengths-list ul li .icon figure {
+    max-width: 50px;
+  }
+  .strengths-list ul li .icon h4 {
+    padding-top: 14px;
+    font-size: 1.6rem;
+  }
+}
+
+/* 説明 */
+.strengths-list ul li .description {
+  width: calc(100% - clamp(162px, 21.15vw, 275px) - clamp(30px, 3.85vw, 50px));
+}
+.strengths-list ul li .description p {
+  font-size: clamp(1.4rem, 1.23vw, 1.6rem);
+  line-height: 1.875;
+}
+@media screen and (max-width: 767px) {
+  .strengths-list ul li .description {
+    width: 100%;
+  }
+  .strengths-list ul li .description p {
+    font-size: 1.4rem;
+    line-height: 1.75;
+  }
+}
+
+/* ---------------------------------------------------
+　SKILLS
+---------------------------------------------------- */
+.skills-list ul {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: clamp(20px, 3vw, 39px);
+  list-style: none;
+}
+.skills-list ul li {
+  padding: clamp(27px, 3.38vw, 45px) clamp(24px, 3vw, 40px);
+  border: 1px solid var(--main-color);
+  background-color: #ffffff;
+}
+.skills-list ul li figure {
+  margin: 0 auto clamp(11px, 1.5vw, 19px) auto;
+  width: 100%;
+  max-width: clamp(38px, 5.07vw, 65px);
+}
+.skills-list ul li figure img {
+  width: 100%;
+  height: auto;
+}
+.skills-list ul li h4 {
+  margin-bottom: clamp(12px, 1.69vw, 21px);
+  font-size: clamp(1.6rem, 0.17vw, 2.2rem);
+  line-height: 1.272;
+  font-weight: 400;
+  text-align: center;
+}
+.skills-list ul li .star {
+  margin: 0 auto clamp(5px, 0.56vw, 8px) auto;
+  width: 100%;
+  max-width: clamp(81px, 10.51vw, 137px);
+}
+.skills-list ul li .star img {
+  width: 100%;
+  height: auto;
+}
+.skills-list ul li .experience {
+  margin-bottom: clamp(11px, 1.5vw, 19px);
+  text-align: center;
+}
+.skills-list ul li .description p {
+  margin-bottom: clamp(0.6rem, 0.77vw, 1rem);
+  font-size: clamp(1.4rem, 1.23vw, 1.6rem);
+  line-height: 1.75;
+}
+.skills-list ul li .description p:last-child {
+  margin-bottom: 0;
+}
+@media screen and (max-width: 767px) {
+  .skills-list ul {
+    grid-template-columns: repeat(1, 1fr);
+    gap: 20px;
+  }
+  .skills-list ul li {
+    padding: 25px 20px;
+  }
+  .skills-list ul li figure {
+    margin: 0 auto 15px auto;
+    max-width: 60px;
+  }
+  .skills-list ul li h4 {
+    margin-bottom: 10px;
+    font-size: 1.8rem;
+  }
+  .skills-list ul li .star {
+    margin: 0 auto 5px auto;
+    max-width: 100px;
+  }
+  .skills-list ul li .experience {
+    margin-bottom: 10px;
+  }
+  .skills-list ul li .description p {
+    margin-bottom: 0.6rem;
+    font-size: 1.4rem;
+    line-height: 1.75;
+  }
+  .skills-list ul li .description p:last-child {
+    margin-bottom: 0;
+  }
+}
